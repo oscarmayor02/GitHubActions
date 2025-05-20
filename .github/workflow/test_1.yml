@@ -1,0 +1,18 @@
+name: Hola mundo
+# Define el nombre del workflow que aparecerá en GitHub Actions.
+
+on: [push]
+# Indica que este workflow se ejecutará cada vez que haya un push al repositorio.
+
+jobs:
+  hola:
+    # Define un trabajo llamado "hola".
+    runs-on: ubuntu-latest
+    # Especifica que el trabajo se ejecutará en un runner con Ubuntu.
+
+    steps:
+      - name: Hola mundo
+        # Nombre del paso que se mostrará en los logs.
+        run: echo Hello, world!
+        # Comando que se ejecuta en la terminal del runner (imprime "Hello, world!").
+
