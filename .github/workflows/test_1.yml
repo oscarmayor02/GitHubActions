@@ -16,6 +16,16 @@ jobs:
         run: echo Hello, world!
         # Comando que se ejecuta en la terminal del runner (imprime "Hello, world!").
 
+      - name: touch file
+        # Nombre del paso que se mostrará en los logs.
+        run: touch file.txt
+        # Comando que crea un archivo vacío llamado "file.txt".
+
+      - name: set txt
+        # Nombre del paso que se mostrará en los logs.
+        run: echo "Hola mundo" >> file.txt
+        # Comando que escribe "Hola mundo" en el archivo "file.txt".
+
   other:
     # Nuevo trabajo llamado "otro-job".
     runs-on: ubuntu-latest
