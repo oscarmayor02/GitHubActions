@@ -36,6 +36,8 @@ jobs:
     runs-on: ubuntu-latest
     # También se ejecuta en Ubuntu.
 
+    needs: hola
+    # Este trabajo depende del trabajo "hola", lo que significa que no se ejecutará hasta que "hola" haya terminado con éxito.
     steps:
       - name: Mostrar fecha y hora
         run: date
