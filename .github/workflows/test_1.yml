@@ -1,8 +1,18 @@
 name: Hola mundo
 # Define el nombre del workflow que aparecerá en GitHub Actions.
 
-on: [push]
-# Indica que este workflow se ejecutará cada vez que haya un push al repositorio.
+on: 
+  push:
+    # Este workflow se activa cuando se hace un push a la rama principal.
+    branches:
+      - main
+      # Especifica que solo se activará para la rama "main".
+
+  pull_request:
+    # Este workflow también se activa cuando se crea un pull request.
+    branches:
+      - main
+      # Especifica que solo se activará para la rama "main".
 
 jobs:
   hola:
@@ -39,6 +49,10 @@ jobs:
     needs: hola
     # Este trabajo depende del trabajo "hola", lo que significa que no se ejecutará hasta que "hola" haya terminado con éxito.
     steps:
+      - name: checkout
+        # Nombre del paso que se mostrará en los logs.
+        uses: actions/checkout@v2
+        # Este paso utiliza la acción de checkout para clonar el repositorio en el runner.
       - name: Mostrar fecha y hora
         run: date
         # Este paso imprime la fecha y hora actual.
