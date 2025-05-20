@@ -26,6 +26,11 @@ jobs:
         run: echo "Hola mundo" >> file.txt
         # Comando que escribe "Hola mundo" en el archivo "file.txt".
 
+      - name: cat file
+        # Nombre del paso que se mostrará en los logs.
+        run: cat file.txt
+        # Comando que imprime el contenido del archivo "file.txt".
+
   other:
     # Nuevo trabajo llamado "otro-job".
     runs-on: ubuntu-latest
