@@ -16,3 +16,12 @@ jobs:
         run: echo Hello, world!
         # Comando que se ejecuta en la terminal del runner (imprime "Hello, world!").
 
+  other:
+    # Nuevo trabajo llamado "otro-job".
+    runs-on: ubuntu-latest
+    # También se ejecuta en Ubuntu.
+
+    steps:
+      - name: Mostrar fecha y hora
+        run: date
+        # Este paso imprime la fecha y hora actual.
