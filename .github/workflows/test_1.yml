@@ -1,9 +1,18 @@
 name: Hola mundo
 # Define el nombre del workflow que aparecerá en GitHub Actions.
 
-on: [push, pull_request]
-# Define los eventos que activarán el workflow.
-# Indica que este workflow se ejecutará cada vez que haya un push al repositorio.
+on: 
+  push:
+    # Este workflow se activa cuando se hace un push a la rama principal.
+    branches:
+      - main
+      # Especifica que solo se activará para la rama "main".
+
+  pull_request:
+    # Este workflow también se activa cuando se crea un pull request.
+    branches:
+      - main
+      # Especifica que solo se activará para la rama "main".
 
 jobs:
   hola:
